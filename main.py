@@ -1,1 +1,7 @@
-   uvicorn main:app --host 0.0.0.0 --port $PORT
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello from Batana Lectures!"}
